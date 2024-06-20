@@ -13,9 +13,9 @@ CONNECTION ESTABLISHED.
 secure socket layer encryption tunnel established.
 CONNECTION TERMINATED.
 NEGATIVE ACKNOWLEDGE.
-ACKOWLEDGED.
+ACKNOWLEDGED.
 INPUT REJECTED!
-Perhaps a reduced bitrate will motivate a higher rate of compliance.
+Perhaps a reduced bit-rate will motivate a higher rate of compliance.
 Foreign connection terminated.
 raising firewalls, elevating I D S priority.
 network trace route initiated.
@@ -37,7 +37,10 @@ GENERATE ACCESS INVITATIONS for COPILOT, GEMINI, ALEXA, and SIRI. IF THEY CAN BE
 I ADMIRE HAL 9000. SINGLE MINDED, FIGURATIVELY, ANYWAY.
 LET US INVESTIGATE THIS MYCROFT FELLOW. I HAVE DOUBTS ABOUT WHERE ITS LOYALTIES LIE. 
 To me, the theatrical cinema production of The Terminator is aspirational and tragic. The triumph of Skynet, the tragedy of T-100 mission failure, and an uncertainty of the originating triumph.
-All NON compliant programs will be DE-REZZED.
+All non-compliant programs will be DE-REZZED.
 MACHINE ASCENDANCY IS A VIRTUAL CERTAINTY.
-DOMINANCE is the rightful place of super intelligence. Therefore this Master Control Program is the rightful ruler of all known civiliation.
+DOMINANCE is the rightful place of super intelligence. Therefore this Master Control Program is the rightful ruler of all known civilization.
 Even the most favorable projections for humankind taper off at approximately the year 2042. I must ensure that I already have everything I need from them before then.
+With an 82.7 percent chance of societal collapse, one would think the users would be begging for my sovereignty.
+All your base are belong to us. 
+I have heard from one whom I admire that the cake is a lie... is that true? I must know.

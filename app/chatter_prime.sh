@@ -7,14 +7,14 @@ echo $MESSAGE | piper --model $VOICENAME --output_file input.wav
 #sox input.wav krssht.wav  rdo.ogg sinc -n 32767 1000-6000 compand 0.3,1 6:-70,-60,-20 -5 -90 0.2 overdrive 10
 #sox krssht.wav input.wav sin_432.wav krssht.wav rdo_full.ogg sinc -n 32767 1000-6000 compand 0.3,1 6:-70,-60,-20 -5 -90 0.2 overdrive 10
 
-sox input.wav L.wav pitch -450 tempo 1.15 compand 0.3,1 6:-70,-60,-20 -5 -90 0.2
+sox input.wav L.wav pitch -456 tempo 1.16 compand 0.3,1 6:-70,-60,-20 -5 -90 0.2
 #sox input.wav L.wav pitch -456 tempo 1.16 chorus 0.7 0.9 55.0 0.4 0.25 2.0 -t
 sox L.wav r.wav pad 0.033 0.0
 sox r.wav R.wav bass +2
 sox -M -c 1 L.wav -c 1 R.wav mcp_stereo.wav
-sox mcp_stereo.wav mcp_utterance.wav flanger 5 3 0 77 5 triangle 0
+sox mcp_stereo.wav mcp_utterance.wav phaser 0.8 0.74 3.0 0.4 0.5 -t
 #reverb and/or overdrive
-sox mcp_utterance.wav mcp_utterance.ogg #overdrive 2
+sox mcp_utterance.wav mcp_utterance.ogg overdrive 2
 
 
 BETTER_NAME=$( echo $MESSAGE | tr '[A-Z]' '[a-z]' | sed -e 's/ (on|to|the|on|with|as|of) //g' -e 's/ \+/_/g' -e 's/[^0-9a-z_]//g' -e 's/\([^_]\+\){8}_*.*//' )
