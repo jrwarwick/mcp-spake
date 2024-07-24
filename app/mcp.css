@@ -1,0 +1,74 @@
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 0.5rem;
+  background: #ffffff;
+  border: 1px solid;
+  margin-top: -5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 0.5rem;
+  background: #ffffff;
+  margin-top: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+  height: 0.75rem;
+  width: 0.5rem;
+  background: #ffffff;
+  border: 1px solid;
+  margin-top: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+
+
+.tron-button {
+  background-color: #0f0f0f; /* Dark background */
+  border: 1px solid #00e5ff; /* Bright border color */
+  border-radius: 3px;
+  color: #00e5ff; /* Text color */
+  font-family: 'Tron', sans-serif; /* Custom font if available */
+  padding: 10px 20px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tron-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #00e5ff; /* Same as border color */
+  transition: all 0.5s;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.tron-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+.tron-button:focus, .tron-button:hover {
+  color: #fff;
+  background-color: #00e5ff; /* Button fill on hover/focus */
+}

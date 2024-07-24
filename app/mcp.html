@@ -2,10 +2,12 @@
 <html>
 <head>
 	<title>MCP Spake Chatter Jukebox</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+	<link rel="shortcut icon" href="favicon-32x32.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jersey+15&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="mcp.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 	<style>
 		body {
 			/*    background: radial-gradient(circle, #36363D 0%, black 100%); */
@@ -15,13 +17,13 @@
 			background-attachment: fixed;
 			background-position: center;
 			background-size: cover;
-			color: #4dc8dd;
+			color: #44aeee;
 			  font-family: "Jersey 15", sans-serif, monospace;
 			  font-weight: 400;
 			  font-style: normal;
 		}
 		#infobox {
-			border: 1px solid #242526;
+			border: 2px solid #2F2526;
 			border-radius:3px;
 			/*display:inline; */
 			width:40%;
@@ -43,12 +45,14 @@
 			left: 412px;
 			top: 507px;
 		}
+
 	</style>
 </head>
 <body>
 	<span id="red_led"></span>
 
-	<button id="mute_button" onclick="if(g_muted){g_muted=false}else{g_muted=true};playRandomSound();">mute</button>
+	<button class="tron-button" id="mute_button" onclick="if(g_muted){g_muted=false}else{g_muted=true};playRandomSound();">mute</button>
+	<input type="range" id="volume_slider" min="0" max="100" value="65"> 
 
 	<div id="infobox">
 		<p></p>
@@ -162,6 +166,14 @@ fetchAndParseHTML("/") //Root of current site. might be better to use navigator 
     console.error("Error:", error);
   });
 
+
+
+
+document.getElementById("volume_slider").addEventListener('input', function() {
+	  // Call the function with the new value of the slider
+	console.info("newvol" + this.value/100);
+	Howler.volume(this.value / 100);
+});
 
 </script>
 
