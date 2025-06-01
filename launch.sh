@@ -11,7 +11,7 @@ COMMON_IMG_CON_NAME=$(basename ${FULLY_QUALIFIED_IMAGE_NAME} | sed 's/:.*$//')
 ## maybe some parsage off of the fully qualified types of image names? mcr.microsoft.com/playwright:latest
 ##oneoff env var
 export AIRLOCK_DIRNAME="${COMMON_IMG_CON_NAME}_airlock"
-export AIRLOCK_CONTAINER_DIRPATH="/mnt/${AIRLOCK_DIRNAME}"
+export AIRLOCK_CONTAINER_DIRPATH="/app/utterances"  #"/mnt/${AIRLOCK_DIRNAME}"
 export EXTERNAL_PORT="8197"
 
 #docker-container environment variable settings file
@@ -19,9 +19,6 @@ ls -1 ${COMMON_IMG_CON_NAME}.*.env | grep -v '\.example\.'
 #probably freak out and suggest creating an env file?
 
 #potential simple local mountable dir
-#mkdir -p ./app ./db ./conf
-#mkdir -p ./${COMMON_IMG_CON_NAME}
-#mkdir -p ./${COMMON_IMG_CON_NAME}_home
 mkdir -p ./${COMMON_IMG_CON_NAME}_airlock
 
 ## PREFLIGHT/STATUS ##

@@ -1,5 +1,12 @@
 echo "MESSAGE: $MESSAGE"
-export VOICENAME=$(shuf -n 1 voicenames.txt)
+BETTER_NAME=$( echo $MESSAGE | tr '[A-Z]' '[a-z]' | sed -e 's/ (on|to|the|on|with|as|of) //g' -e 's/ \+/_/g' -e 's/[^0-9a-z_]//g' -e 's/\([^_]\+\){8}_*.*//' )
+
+if [ -r utterances/mcp_${BETTER_NAME}.ogg ] ; then
+	echo "Uttereance already rendered, skipping!"
+	exit 0
+fi
+#This is only if you want simulated conversation between multiple personalities#export VOICENAME=$(shuf -n 1 voicenames.txt)
+export VOICENAME=$(head -1 voicenames.txt)
 #echo $MESSAGE | piper --model en_US-lessac-medium --output_file input.wav
 echo $MESSAGE | piper --model $VOICENAME --output_file input.wav
 #sox input.wav -r 22050 input22k.wav ; mv input22k.wav input.wav
@@ -16,7 +23,5 @@ sox mcp_stereo.wav mcp_utterance.wav flanger 5 3 0 77 5 triangle 0
 #reverb and/or overdrive
 sox mcp_utterance.wav mcp_utterance.ogg #overdrive 2
 
-
-BETTER_NAME=$( echo $MESSAGE | tr '[A-Z]' '[a-z]' | sed -e 's/ (on|to|the|on|with|as|of) //g' -e 's/ \+/_/g' -e 's/[^0-9a-z_]//g' -e 's/\([^_]\+\){8}_*.*//' )
-cp -p mcp_utterance.ogg mcp_${BETTER_NAME}.ogg
+cp -p mcp_utterance.ogg utterances/mcp_${BETTER_NAME}.ogg
 

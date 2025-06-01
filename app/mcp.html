@@ -13,6 +13,7 @@
 			width: 100%; height: 100%;
 		}
 		body {
+			width: 100%; height: 100%;
 			/*    background: radial-gradient(circle, #36363D 0%, black 100%); */
 			background-color:black;
 			background-image:url('/mcp.gif');
@@ -145,7 +146,7 @@ async function fetchAndParseHTML(url) {
 
 
 //Ok, go.
-fetchAndParseHTML("/") //Root of current site. might be better to use navigator object
+fetchAndParseHTML("/utterances/") //Root of current site. might be better to use navigator object
   .then(doc => {
     if (doc) {
       console.log("Successfully parsed document:", doc);
@@ -153,7 +154,8 @@ fetchAndParseHTML("/") //Root of current site. might be better to use navigator 
       // to manipulate its content or extract information.
      doc.querySelectorAll("ul > li > a[href$='.ogg']").forEach((el)=>{
 	     console.log(el.href);
-	     g_soundUrls.push(el.href);
+	     console.log(el.href.split('/').pop());
+	     g_soundUrls.push("/utterances/"+ el.href.split('/').pop());
      });
 	// Call the function to play a sound initially (now that we have available sounds identified)
 	playRandomSound();

@@ -21,6 +21,7 @@ RUN  mkdir /tmp/out
 
 COPY app/ /app/
 RUN  chmod 664 /app/*.py /app/*.sh
+RUN mkdir /app/utterances
 WORKDIR /app
 RUN /bin/bash /app/get_voices.sh
 RUN /bin/curl -LO https://github.com/rhasspy/piper/activity
